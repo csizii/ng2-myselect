@@ -1,7 +1,15 @@
 {
-  "name": "ng2-select",
+  "name": "ng2-selector",
   "peerDependencies": {
     "@angular/common": "*",
     "@angular/core": "*"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
