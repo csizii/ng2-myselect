@@ -1,36 +1,41 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 let doc = require('html-loader!markdown-loader!../../doc.md');
 
 let tabDesc: any = {
-  single: {
-    heading: 'Single',
-    ts: require('!!raw-loader?lang=typescript!./select/single-demo.ts'),
-    html: require('!!raw-loader?lang=markup!./select/single-demo.html')
-  }
-  ,
-  multiple: {
-    heading: 'Multiple',
-    ts: require('!!raw-loader?lang=typescript!./select/multiple-demo.ts'),
-    html: require('!!raw-loader?lang=markup!./select/multiple-demo.html')
-  }
-  ,
-  children: {
-    heading: 'Children',
-    ts: require('!!raw-loader?lang=typescript!./select/children-demo.ts'),
-    html: require('!!raw-loader?lang=markup!./select/children-demo.html')
-  }
-  ,
-  rich: {
-    heading: 'Rich',
-    ts: require('!!raw-loader?lang=typescript!./select/rich-demo.ts'),
-    html: require('!!raw-loader?lang=markup!./select/rich-demo.html')
-  }
+    single: {
+        heading: 'Single',
+        ts: require('!!raw-loader?lang=typescript!./select/single-demo.ts'),
+        html: require('!!raw-loader?lang=markup!./select/single-demo.html')
+    }
+    ,
+    multiple: {
+        heading: 'Multiple',
+        ts: require('!!raw-loader?lang=typescript!./select/multiple-demo.ts'),
+        html: require('!!raw-loader?lang=markup!./select/multiple-demo.html')
+    }
+    ,
+    children: {
+        heading: 'Children',
+        ts: require('!!raw-loader?lang=typescript!./select/children-demo.ts'),
+        html: require('!!raw-loader?lang=markup!./select/children-demo.html')
+    }
+    ,
+    rich: {
+        heading: 'Rich',
+        ts: require('!!raw-loader?lang=typescript!./select/rich-demo.ts'),
+        html: require('!!raw-loader?lang=markup!./select/rich-demo.html')
+    },
+    disabled: {
+        heading: 'Disabled options',
+        ts: require('!!raw-loader?lang=typescript!./select/disabled-demo.ts'),
+        html: require('!!raw-loader?lang=markup!./select/disabled-demo.html')
+    }
 };
 
 @Component({
-  selector: 'select-section',
-  template: `
+    selector: 'select-section',
+    template: `
 <section>
   <div class="row">
     <tabset>
@@ -46,6 +51,9 @@ let tabDesc: any = {
       <tab heading="Rich">
         <sample-section [desc]="tabDesc.rich"><rich-demo></rich-demo></sample-section>
       </tab>
+      <tab heading="Disabled Option">
+        <sample-section [desc]="tabDesc.disabled"><disabled-demo></disabled-demo></sample-section>
+      </tab>
     </tabset>
   </div>
 
@@ -57,7 +65,7 @@ let tabDesc: any = {
   `
 })
 export class SelectSectionComponent {
-  public currentHeading: string = 'Single';
-  public tabDesc: any = tabDesc;
-  public doc: string = doc;
+    public currentHeading: string = 'Single';
+    public tabDesc: any = tabDesc;
+    public doc: string = doc;
 }
